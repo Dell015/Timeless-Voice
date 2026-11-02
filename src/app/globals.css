@@ -1,24 +1,138 @@
 @import "tailwindcss";
+@import "@fontsource-variable/fraunces/wght.css";
+@import "@fontsource-variable/fraunces/wght-italic.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Warm Paper (light) is the default; Noir Gold (dark) switches on via data-theme. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f0e6;
+  --surface: #ede5d4;
+  --line: #d9d0be;
+  --ink: #16130f;
+  --muted: #5c5547;
+  --subtle: #6b6150;
+  --accent: #8a5e12;
+  --hl: #e7d3a0;
+  --btn: #16130f;
+  --btn-ink: #f5f0e6;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f0e0c;
+  --surface: #16130f;
+  --line: #2a2620;
+  --ink: #f3eee4;
+  --muted: #b9b1a3;
+  --subtle: #8c857a;
+  --accent: #c8a24a;
+  --hl: #e7d3a0;
+  --btn: #c8a24a;
+  --btn-ink: #14110b;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-hl: var(--hl);
+  --color-btn: var(--btn);
+  --color-btn-ink: var(--btn-ink);
+  --font-sans: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--hl);
+  color: #16130f;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 4.5rem);
+}
+
+/* Short colour fade only while the theme is being switched. */
+.theme-anim,
+.theme-anim *,
+.theme-anim *::before,
+.theme-anim *::after {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease !important;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--btn);
+  color: var(--btn-ink);
+  border-radius: 999px;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1.4rem;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 200ms ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.ulink {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 250ms ease;
+}
+.ulink:hover,
+.ulink[aria-current="page"] {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
