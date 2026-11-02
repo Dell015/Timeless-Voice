@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AvailabilityCalendar } from "@/components/availability-calendar";
+import { EstimateCalculator } from "@/components/estimate-calculator";
 import { SamplePlayer } from "@/components/sample-player";
 import { peso, talents } from "@/data/talents";
 
@@ -42,6 +44,10 @@ export default async function TalentPage({ params }: PageProps<"/talent/[slug]">
         </div>
       </header>
 
+      <AvailabilityCalendar name={t.name} booked={t.booked} />
+
+      <EstimateCalculator talent={t} />
+
       <section aria-labelledby="hosting" className="mt-20 border-t border-line pt-10">
         <h2 id="hosting" className="font-display text-3xl tracking-tight">Event hosting</h2>
         <p className="mt-4 font-display text-5xl">
@@ -67,7 +73,7 @@ export default async function TalentPage({ params }: PageProps<"/talent/[slug]">
                 <tr key={r.duration} className="border-b border-line">
                   <th scope="row" className="py-3 pr-4 font-normal text-muted">{r.duration}</th>
                   <td className="py-3 pr-4 font-semibold">{peso(r.price)}</td>
-                  <td className="py-3 text-muted">{r.edit}</td>
+                  <td className="py-3 text-muted">+{peso(r.edit)}</td>
                 </tr>
               ))}
             </tbody>
