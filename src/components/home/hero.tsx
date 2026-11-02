@@ -5,10 +5,7 @@ export function Hero() {
   return (
     <section className="wrap grid items-center gap-12 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
       <div>
-        <p className="rise text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          Event hosts · Voice over · Voice acting
-        </p>
-        <h1 className="rise mt-6 font-display text-5xl leading-[1.02] tracking-tight [animation-delay:80ms] md:text-7xl">
+        <h1 className="rise font-display text-5xl leading-[1.02] tracking-tight [animation-delay:80ms] md:text-7xl">
           Hand-picked voices. <em className="text-accent">Book the one that fits.</em>
         </h1>
         <p className="rise mt-6 max-w-lg text-lg text-muted [animation-delay:160ms]">

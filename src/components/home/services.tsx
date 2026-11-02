@@ -16,14 +16,13 @@ export function Services() {
         More than <em className="text-accent">one kind</em> of voice.
       </h2>
       <ol className="mt-12 border-t border-line">
-        {services.map(([title, text], i) => (
+        {services.map(([title, text]) => (
           <li
             key={title}
-            className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-4 gap-y-1 border-b border-line py-6 transition-[padding] duration-300 hover:pl-3 md:grid-cols-[4rem_1fr_1.2fr]"
+            className="group grid grid items-baseline gap-x-4 gap-y-1 border-b border-line py-6 transition-[padding] duration-300 hover:pl-3 md:grid-cols-[1fr_1.2fr]"
           >
-            <span className="text-sm text-subtle">{String(i + 1).padStart(2, "0")}</span>
             <span className="font-display text-2xl md:text-3xl">{title}</span>
-            <span className="col-start-2 text-muted md:col-start-3">{text}</span>
+            <span className="text-muted">{text}</span>
           </li>
         ))}
       </ol>
