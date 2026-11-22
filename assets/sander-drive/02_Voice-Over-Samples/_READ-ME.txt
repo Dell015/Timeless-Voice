@@ -1,0 +1,32 @@
+02 VOICE-OVER SAMPLES
+
+Purpose: show the many things your voice can be hired for, including things people do not
+think of. There is a subfolder for each kind of job.
+
+What to upload
+- Option A (best): past work. Ads, explainers, corporate videos, narration, phone greetings,
+  audiobook reads, and also school, personal and creative projects you have voiced.
+- Option B: if you have nothing for a subfolder, record the demo lines in _SCRIPT.txt.
+
+Subfolders
+  Ads
+  Explainers-And-Corporate
+  Narration-And-Documentary
+  Phone-And-IVR
+  Audiobooks-And-Stories
+  Schools-And-Education
+  Personal-Projects
+  Creative-Projects
+  Other-Uses
+
+Ideas people can hire a voice for, especially schools and creative people
+  Schools: graduation messages, foundation day and intramurals openings, morning announcements,
+    quiz bee announcer, school play narration, campus tour videos, lesson and e-learning narration,
+    school AVPs, thesis and project video narration for students.
+  Personal: birthday and anniversary greetings, wedding AVPs, proposal messages, tributes,
+    gift messages, memory videos.
+  Creative: podcast intros, YouTube and stream intros, vlogs, short film narration, poems and stories,
+    game characters, trailers, school and student film projects, small business product videos.
+  If you have done something else, put it in Other-Uses with a one-line note.
+
+File names: type_client-or-event_year. Example: school_graduation-message_2025.wav

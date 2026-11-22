@@ -1,0 +1,13 @@
+MESSAGE TEMPLATES FOR CLIENTS (change the [brackets])
+
+ENGLISH
+  Hi [name], thank you again for having me at [event]. It was a pleasure.
+  May I ask for a short comment about your experience? A message or a short video is fine.
+  Also, may I use [the clip / the voice-over] on my page to show my work? I will only use it for promotion,
+  and I will take it down if you ask. Thank you!
+
+FILIPINO / TAGLISH
+  Hi [name], maraming salamat po ulit sa pagpili sa akin sa [event].
+  Pwede ko po bang hingin ang maikling komento ninyo tungkol sa naging karanasan? Message o maikling video po ay ayos lang.
+  At pwede ko rin po bang gamitin ang [clip / voice-over] sa page ko para ipakita ang gawa ko? Para lang po ito sa promotion,
+  at aalisin ko po kung ipapaalis ninyo. Maraming salamat po!

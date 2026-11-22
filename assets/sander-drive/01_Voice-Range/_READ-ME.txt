@@ -1,0 +1,14 @@
+01 VOICE RANGE
+
+Purpose: show how flexible your voice is. The same lines, read in different moods and paces.
+This becomes the "range" part of the reel, so this is the most important recording.
+
+What to do
+- Read the three lines in _SCRIPT.txt once for each take on the list (11 takes).
+- Do each take in English, then again in Filipino (or Taglish, whichever feels natural). 22 takes in total.
+- Do 2 takes of each. It takes about 20 to 30 minutes.
+
+File names: 01_warm_EN_take1.m4a, 01_warm_FIL_take1.m4a, 02_energetic_EN_take1.m4a ... and so on.
+Use the take number from the list.
+
+Phone recording is fine. See READ-ME-FIRST for tips.

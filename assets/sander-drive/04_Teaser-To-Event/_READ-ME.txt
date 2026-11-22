@@ -1,0 +1,16 @@
+04 TEASER TO EVENT
+
+Purpose: this is the story part of the reel. A client hires you to voice an event teaser,
+then realizes the same voice can host the event too.
+
+If this really happened
+- Upload the teaser or trailer you voiced (audio or video).
+- Upload video of the same event where you were the host.
+- Add a one-line note: client, event, year.
+- Ask the client for permission to use both. See folder 08 for a message you can send.
+
+If it did not happen yet
+- Record the two parts in _SCRIPT.txt, in the same voice and same mood, so we can recreate the story.
+  We will show it as a dramatization.
+
+File names: teaser_evening-of-gold_2025.wav   host_evening-of-gold_2025.mp4

@@ -1,0 +1,30 @@
+01 VOICE RANGE: SCRIPT
+
+The same three lines for every take. Only the mood changes.
+
+ENGLISH
+  1. Some moments only happen once.
+  2. Make sure they're heard exactly the way they should be.
+  3. This is the voice for it.
+
+FILIPINO
+  1. May mga sandaling minsan lang mangyari.
+  2. Siguraduhin nating maririnig ito sa tamang paraan.
+  3. Ito ang boses para diyan.
+
+(Change a word if it does not sound like you. Keep the meaning.)
+
+THE TAKES
+  01 WARM          Like talking to a close friend. Smile in the voice.
+  02 ENERGETIC     Big and bright. A host who gets the room moving.
+  03 SERIOUS       Steady, no smile. Corporate, trustworthy.
+  04 DRAMATIC      Weight on the key words. Use pauses.
+  05 CALM          Soft and relaxed. Unhurried, comforting.
+  06 FRIENDLY      Casual, everyday, conversational.
+  07 AUTHORITATIVE Confident and commanding. An announcement people obey.
+  08 CINEMATIC     Deep and slow, like a movie trailer. Let it build.
+  09 EMOTIONAL     Heartfelt, close to the mic. It is fine if the last line softens.
+  10 FAST PACE     Quick and crisp, like a short ad. Still clear.
+  11 SLOW PACE     Deliberate. Every word given room.
+
+Say the take name before each take, for example: "Cinematic, English, take one."

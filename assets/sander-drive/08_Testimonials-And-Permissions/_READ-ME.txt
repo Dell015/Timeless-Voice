@@ -1,0 +1,11 @@
+08 TESTIMONIALS AND PERMISSIONS
+
+Purpose: reviews from clients, and proof that clients allow us to reuse their video or voice.
+We will not publish a client's work without permission.
+
+Upload
+- Written reviews (screenshots of messages are fine, with the name visible if the client agrees).
+- Short video reviews if a client is willing.
+- Screenshots of messages where a client says "yes, you can use it".
+
+Use MESSAGE-TEMPLATES.txt to ask clients. Send it to clients from past events.

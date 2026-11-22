@@ -1,0 +1,10 @@
+06 CHARACTERS: SCRIPT
+
+  HERO:               "I won't back down. Not now. Not ever."
+  VILLAIN:            "You think you can stop me? How adorable."
+  WISE OLD MAN:       "Listen, hijo. The river doesn't hurry, yet it reaches the sea."
+  CHILD:              "Mama, look! It's the biggest fish in the whole world!"
+  FRIENDLY ROBOT:     "Hello, human. I have been waiting forty-two minutes to say that."
+  NEWS ANCHOR:        "Good evening. Our top story tonight: the whole city comes together."
+  MYSTERIOUS WHISPER: "Do you hear that? It's been following us."
+  CARTOON SIDEKICK:   "Wait for me! I'm coming, I'm coming!"

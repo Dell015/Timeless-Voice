@@ -1,0 +1,73 @@
+02 VOICE-OVER SAMPLES: DEMO SCRIPTS
+Only record these if you have no past work for that subfolder. The names are made up.
+Say the line in your natural voice. Taglish is fine. 2 takes each.
+
+ADS
+  Radio ad:
+    "Mornings are better with the right cup. At Bahay Kape, every brew is made fresh, and every cup is made for you.
+     Visit us today. Bahay Kape: dito, laging may kape para sa'yo."
+  Social ad (short):
+    "Your event is coming. Don't leave it to chance. Book your team, book your voice. Message us today."
+
+EXPLAINERS-AND-CORPORATE
+  Explainer:
+    "Meet PayEasy, the simple way to pay your bills. Open the app. Choose your bill. Tap pay. That's it. Less waiting, more living."
+  Company intro:
+    "Since 2005, Northline Logistics has delivered more than goods. We deliver trust. Across Luzon, our teams work every day so your business keeps moving."
+
+NARRATION-AND-DOCUMENTARY
+    "Along the river, the day begins before sunrise. Boats slip into the water. Nets are lifted. And a town wakes up
+     the way it always has: slowly, together."
+
+PHONE-AND-IVR
+  Phone menu:
+    "Thank you for calling Sunrise Dental. For appointments, press 1. For our clinic hours, press 2.
+     To speak with our staff, please stay on the line."
+  Voicemail:
+    "Hi, you've reached Sander. I can't answer right now. Leave your name and number, and I'll call you back as soon as I can."
+  On hold:
+    "Thank you for holding. Your call is important to us. Someone will be with you shortly."
+
+AUDIOBOOKS-AND-STORIES
+  Story:
+    "The old lighthouse had been dark for years. But on the night of the storm, a single light flickered on at the top of the tower.
+     Mara stopped on the path. She had never seen it before, and somehow, she knew it was waiting for her."
+  Children's story (Filipino):
+    "Noong unang panahon, may isang batang mahilig makinig sa hangin. Isang gabi, bumulong ang hangin: 'Sumama ka sa akin.'"
+
+SCHOOLS-AND-EDUCATION
+  Graduation message:
+    "Today we close one chapter and open another. To our graduates: the lessons you carried here will go with you,
+     long after you leave these halls. Congratulations!"
+  Intramurals opening:
+    "Good morning, Sunrise Academy! Welcome to this year's intramurals! Let's play hard, play fair, and cheer louder than ever!"
+  Morning announcements:
+    "Good morning, students and teachers. Here are today's announcements. Please listen carefully."
+  Lesson narration:
+    "In this lesson, we will learn how plants make their own food. Let's begin with one simple question: what do plants need to grow?"
+  Quiz bee:
+    "Question number five. You have thirty seconds. Ready... begin."
+  School AVP:
+    "Four years. Countless memories. One family. This is our story."
+
+PERSONAL-PROJECTS
+  Birthday:
+    "Hi Maria, this is Sander, and I heard it's a special day. Happy birthday! May this year be your best one yet."
+  Wedding AVP:
+    "It began with a hello. And somehow, it became forever."
+  Anniversary:
+    "Ten years, and I'd still choose you every day. Happy anniversary."
+  Tribute:
+    "Thank you for everything you taught us. You will always be part of who we are."
+
+CREATIVE-PROJECTS
+  Podcast intro:
+    "Welcome to the show. Grab a seat, get comfortable, and let's talk about the stories behind the stories."
+  Stream or YouTube intro:
+    "Three, two, one. We're live! Welcome back to the channel."
+  Poem (original):
+    "Some voices fill a room. Others fill a memory. The best ones do both."
+  Trailer line:
+    "This season, everything changes."
+  Short film narration:
+    "I didn't know then that leaving would be the easy part."
