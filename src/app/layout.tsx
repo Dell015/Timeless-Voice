@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./studio.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { themeScript } from "@/lib/theme-script";
 
 export const metadata: Metadata = {
   title: { default: "Timeless Voices", template: "%s · Timeless Voices" },
-  description: "Hand-picked voices. Book the one that fits.",
+  description: "Event hosting and voice over with Sir Sander in Tuguegarao. Explore services, estimate rates and prepare a booking brief.",
 };
 
 export const viewport: Viewport = {

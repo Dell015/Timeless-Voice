@@ -1,6 +1,8 @@
 export const pad = (n: number) => String(n).padStart(2, "0");
 export const dateKey = (y: number, m: number, d: number) => `${y}-${pad(m + 1)}-${pad(d)}`;
 
+export const localDateKey = (date: Date) => dateKey(date.getFullYear(), date.getMonth(), date.getDate());
+
 /** Weeks (Sunday first) for a month; null pads days outside the month. month is 0-11. */
 export function monthGrid(year: number, month: number): (number | null)[][] {
   const first = new Date(year, month, 1).getDay();

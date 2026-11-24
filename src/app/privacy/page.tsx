@@ -1,30 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = { title: "Privacy" };
 
-const sections: [string, string][] = [
-  ["What we collect", "When you send an inquiry or plan an event, we collect the details you enter: your name, contact details, event date and place, and what you need. [Confirm the final list of fields.]"],
-  ["Why we collect it", "To pass your request to the talent you chose, reply to you, and arrange your booking. We do not use it for anything unrelated."],
-  ["Who sees it", "The talent you contacted and the site team. We do not sell your details. [Confirm service providers, such as hosting and email.]"],
-  ["How long we keep it", "[Decide a retention period.] You can ask us to correct or delete your details at any time."],
-  ["Cookies and analytics", "[Describe analytics and advertising pixels once chosen. Ask for consent before using them.]"],
-  ["Contact", "[Email or Messenger for privacy requests.]"],
-];
-
 export default function PrivacyPage() {
   return (
-    <div className="wrap max-w-3xl py-16 md:py-24">
-      <h1 className="font-display text-5xl tracking-tight">Privacy</h1>
-      <p className="mt-4 rounded-xl border border-line bg-surface p-4 text-sm text-muted">
-        Draft for review. This is a plain-language starting point, not legal advice. It should be checked against the
-        Philippine Data Privacy Act before launch.
-      </p>
-      {sections.map(([h, p]) => (
-        <section key={h} className="mt-10">
-          <h2 className="font-display text-2xl">{h}</h2>
-          <p className="mt-3 text-muted">{p}</p>
-        </section>
-      ))}
-    </div>
+    <article className="wrap chapter">
+      <div className="max-w-2xl">
+        <Link href="/" className="text-link mb-4 text-sm">← Home</Link>
+        <h1 className="display-title">Privacy</h1>
+        <h2 className="mt-9 font-display text-3xl">Your booking brief</h2>
+        <p className="mt-3 text-muted">The planner uses the details you enter to prepare a draft in your browser. Downloading saves a text file on your device. Copying places the draft on your clipboard. You choose when and with whom to share it.</p>
+        <h2 className="mt-9 font-display text-3xl">Your preferences</h2>
+        <p className="mt-3 text-muted">When you choose light or dark mode, the site stores that choice in your browser. You can remove it by clearing the site’s browser data.</p>
+      </div>
+    </article>
   );
 }

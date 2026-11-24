@@ -8,7 +8,7 @@ export type Estimate =
 
 export function hostingEstimate(t: Talent, zone: HostingZone): Estimate {
   if (zone === "other") {
-    return { kind: "ask", reason: "Events beyond Cagayan and Isabela are priced case by case. Send an inquiry for a quote." };
+    return { kind: "ask", reason: "Events beyond Cagayan and Isabela are priced case by case. Ask the talent for a travel quote." };
   }
   const lines = [{ label: "Hosting (usually 3 to 4 hours)", amount: t.hosting.from }];
   if (zone === "nearby") lines.push({ label: "Outside Tuguegarao, within Cagayan or Isabela", amount: t.hosting.outsideExtra });
