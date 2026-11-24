@@ -14,11 +14,16 @@ export function EstimateCalculator({ talent }: { talent: Talent }) {
   const [sec, setSec] = useState("0");
   const [editing, setEditing] = useState(false);
 
-  const seconds = Math.max(0, Number(min) || 0) * 60 + Math.max(0, Number(sec) || 0);
-  const est = mode === "hosting" ? hostingEstimate(talent, zone) : voEstimate(talent, seconds, editing);
+  const minutes = Number(min);
+  const remainder = Number(sec);
+  const valid = Number.isInteger(minutes) && minutes >= 0 && minutes <= 60 && Number.isInteger(remainder) && remainder >= 0 && remainder <= 59;
+  const seconds = minutes * 60 + remainder;
+  const est = mode === "hosting" ? hostingEstimate(talent, zone)
+    : valid ? voEstimate(talent, seconds, editing)
+    : { kind: "ask" as const, reason: "Use whole minutes from 0 to 60 and seconds from 0 to 59." };
 
   return (
-    <section aria-labelledby="estimate" className="mt-20 rounded-3xl border border-line bg-surface p-6 md:p-8">
+    <section aria-labelledby="estimate" className="tool-card">
       <h2 id="estimate" className="font-display text-3xl tracking-tight">Estimate your cost</h2>
       <p className="mt-2 text-muted">A quick guide. The final price is confirmed when you book.</p>
 
@@ -46,7 +51,7 @@ export function EstimateCalculator({ talent }: { talent: Talent }) {
             <fieldset>
               <legend className="font-semibold">Length of the voice over</legend>
               <div className="flex gap-3">
-                <label className="flex-1 text-sm text-muted">Minutes
+                <label className="min-w-0 flex-1 text-sm text-muted">Minutes
                   <input type="number" inputMode="numeric" min={0} max={60} value={min} onChange={(e) => setMin(e.target.value)} className={field} />
                 </label>
                 <label className="flex-1 text-sm text-muted">Seconds

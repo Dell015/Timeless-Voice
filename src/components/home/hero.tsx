@@ -1,31 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
-import { SamplePlayer } from "../sample-player";
+import { talents, peso } from "@/data/talents";
 
 export function Hero() {
+  const featured = talents[0];
   return (
-    <section className="wrap grid items-center gap-12 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
-      <div>
-        <h1 className="rise font-display text-5xl leading-[1.02] tracking-tight [animation-delay:80ms] md:text-7xl">
-          Hand-picked voices. <em className="text-accent">Book the one that fits.</em>
-        </h1>
-        <p className="rise mt-6 max-w-lg text-lg text-muted [animation-delay:160ms]">
-          Hosts and voice talent for weddings, debuts, corporate events and productions. Press play, then plan your
-          event in a few minutes.
-        </p>
-        <div className="rise mt-8 flex flex-wrap items-center gap-4 [animation-delay:240ms]">
-          <Link href="/plan" className="btn">Plan your event</Link>
-          <Link href="/#voices" className="ulink py-2 font-semibold">Meet the voices</Link>
+    <>
+      <section className="hero">
+        <Image src="/studio/microphone.webp" alt="" fill preload sizes="100vw" className="hero-photo" />
+        <div className="hero-shade" />
+        <div className="wrap hero-content">
+          <div className="hero-copy">
+            <p className="kicker hero-kicker"><span className="rule" /> Event hosting &amp; voice over</p>
+            <h1>A voice for<br /><em>your moment.</em></h1>
+            <p className="hero-description">From the first welcome to the final word. Find a host for your celebration or a voice for your next production.</p>
+            <div className="hero-actions">
+              <Link href="/plan" className="btn btn-gold">Plan your event <span aria-hidden="true">↗</span></Link>
+              <Link href="/#voices" className="hero-secondary">Meet the talent <span aria-hidden="true">↓</span></Link>
+            </div>
+          </div>
         </div>
+      </section>
+      <div className="rate-strip">
+        <dl className="wrap facts">
+          <div><dt>Event hosting</dt><dd>From {peso(featured.hosting.from)} <span>/ event</span></dd></div>
+          <div><dt>Voice over</dt><dd>From {peso(featured.voRates[0].price)} <span>/ recording</span></dd></div>
+          <div><dt>Home base</dt><dd>Tuguegarao <span>/ Philippines</span></dd></div>
+        </dl>
       </div>
-      <div className="rise relative [animation-delay:200ms]">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-surface">
-          <span className="absolute left-4 top-4 text-[11px] uppercase tracking-[0.14em] text-subtle">[PHOTO]</span>
-        </div>
-        <div className="absolute inset-x-4 -bottom-6 rounded-2xl border border-line bg-bg p-4 shadow-lg shadow-black/10">
-          <p className="mb-3 text-sm text-muted">Sir Sander · Event host · sample</p>
-          <SamplePlayer name="Sir Sander" size="lg" />
-        </div>
-      </div>
-    </section>
+    </>
   );
 }

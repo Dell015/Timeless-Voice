@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { AvailabilityCalendar } from "@/components/availability-calendar";
 import { EstimateCalculator } from "@/components/estimate-calculator";
@@ -26,9 +27,7 @@ export default async function TalentPage({ params }: PageProps<"/talent/[slug]">
       <Link href="/#voices" className="ulink text-sm text-muted">← All voices</Link>
 
       <header className="mt-8 grid gap-10 md:grid-cols-[320px_1fr]">
-        <div className="relative aspect-[4/5] rounded-3xl border border-line bg-surface">
-          <span className="absolute left-4 top-4 text-[11px] uppercase tracking-[0.14em] text-subtle">[PHOTO]</span>
-        </div>
+        <div className="profile-photo"><Image src="/studio/console.webp" fill sizes="(min-width: 768px) 320px, 95vw" alt="Analogue recording console" /></div>
         <div className="flex flex-col justify-end">
           <ul className="mb-4 flex flex-wrap gap-2 text-sm">
             {t.tags.map((tag) => (
@@ -38,15 +37,16 @@ export default async function TalentPage({ params }: PageProps<"/talent/[slug]">
           <h1 className="font-display text-5xl tracking-tight md:text-7xl">{t.name}</h1>
           <p className="mt-5 max-w-xl text-lg text-muted">{t.bio}</p>
           <div className="mt-8 flex flex-wrap items-center gap-6">
-            <SamplePlayer name={t.name} size="lg" />
-            <Link href="/plan" className="btn">Plan an event with {t.name.replace("Sir ", "")}</Link>
+            <SamplePlayer name={t.name} src={t.sampleUrl} />
+            <Link href={`/plan?talent=${t.slug}`} className="btn">Plan an event with {t.name.replace("Sir ", "")}</Link>
           </div>
         </div>
       </header>
 
-      <AvailabilityCalendar name={t.name} booked={t.booked} />
-
-      <EstimateCalculator talent={t} />
+      <div className="profile-tools mt-12">
+        <AvailabilityCalendar name={t.name} slug={t.slug} booked={t.booked} />
+        <EstimateCalculator talent={t} />
+      </div>
 
       <section aria-labelledby="hosting" className="mt-20 border-t border-line pt-10">
         <h2 id="hosting" className="font-display text-3xl tracking-tight">Event hosting</h2>
@@ -59,7 +59,7 @@ export default async function TalentPage({ params }: PageProps<"/talent/[slug]">
       <section aria-labelledby="vo" className="mt-16 border-t border-line pt-10">
         <h2 id="vo" className="font-display text-3xl tracking-tight">Voice over</h2>
         <div className="mt-6 overflow-x-auto">
-          <table className="w-full min-w-[420px] text-left">
+          <table className="w-full text-left text-sm sm:text-base">
             <caption className="sr-only">Voice over prices by duration</caption>
             <thead>
               <tr className="border-b border-line text-sm text-subtle">

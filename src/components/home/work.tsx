@@ -1,21 +1,16 @@
+const scripts = [
+  ["Wedding welcome", "Live hosting", "Good evening, everyone. The people in this room have known our couple at different chapters of their lives. Tonight, you get to welcome them into a new one. Please rise for the newlyweds!"],
+  ["Travel narration", "Voice over", "Before the city wakes, the river is already moving. Along its banks, the first boats push off and another morning begins in the valley."],
+  ["Event invitation", "Promotional read", "One stage. A whole evening of local music. Gather your friends and join us when the lights come up this Saturday."],
+];
+
 export function Work() {
   return (
-    <section id="work" className="wrap scroll-mt-8 py-20 md:py-28">
-      <h2 className="font-display text-4xl tracking-tight md:text-5xl">Past work</h2>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {[1, 2, 3].map((n) => (
-          <div key={n} className="rounded-2xl border border-line bg-surface p-6">
-            <div className="aspect-video rounded-xl border border-line bg-bg" />
-            <p className="mt-4 text-sm text-subtle">[Event or project {n}]</p>
-          </div>
-        ))}
-      </div>
-      <figure className="mt-12 max-w-2xl border-l-2 border-accent pl-6">
-        <blockquote className="font-display text-2xl italic leading-snug">
-          “[Client testimonial goes here.]”
-        </blockquote>
-        <figcaption className="mt-3 text-sm text-subtle">[Client name, event]</figcaption>
-      </figure>
+    <section id="work" className="wrap chapter section-split">
+      <div><h2 className="display-title">Sample scripts</h2><p className="mt-4 max-w-xs text-muted">Explore three example reads while recorded demos are being prepared.</p></div>
+      <div className="script-list">{scripts.map(([name, type, script]) =>
+        <details key={name}><summary><span><small>{type}</small>{name}</span><span aria-hidden="true" className="expand">+</span></summary>
+          <p>{script}</p></details>)}</div>
     </section>
   );
 }

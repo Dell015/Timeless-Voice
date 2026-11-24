@@ -5,6 +5,7 @@ export type Talent = {
   name: string;
   tags: string[];
   bio: string;
+  sampleUrl?: string;
   hosting: { from: number; outsideExtra: number; note: string };
   voRates: VoRow[];
   voExtra: { perMinute: number; editPerMinute: number; note: string };
@@ -18,7 +19,7 @@ export const talents: Talent[] = [
     slug: "sir-sander",
     name: "Sir Sander",
     tags: ["Event host", "Voice over"],
-    bio: "[Short bio goes here.]",
+    bio: "Sir Sander hosts weddings, debuts and corporate events in Tuguegarao and across Cagayan and Isabela. His studio services include narration, commercials and character reads.",
     hosting: {
       from: 10000,
       outsideExtra: 2000,

@@ -4,12 +4,5 @@ import { Voices } from "@/components/home/voices";
 import { Work } from "@/components/home/work";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Voices />
-      <Work />
-      <Services />
-    </>
-  );
+  return <><Hero /><Voices /><Services /><Work /></>;
 }
