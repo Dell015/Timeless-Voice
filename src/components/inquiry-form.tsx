@@ -1,5 +1,6 @@
 "use client";
 
+import { SendBrief } from "./send-brief";
 import { useSearchParams } from "next/navigation";
 import { useRef, useState, type FormEvent } from "react";
 import { SERVICE_OPTIONS, validateInquiry } from "@/lib/inquiry";
@@ -9,12 +10,13 @@ const field = "mt-1 w-full rounded-lg border px-3 py-2.5 text-ink";
 const label = "block font-semibold";
 type TalentOption = { slug: string; name: string };
 
-export function InquiryForm({ talents }: { talents: TalentOption[] }) {
+export function InquiryForm({ talents, canSend }: { talents: TalentOption[]; canSend: boolean }) {
   const query = useSearchParams();
   const talent = talents.find(t => t.slug === query.get("talent"));
   const date = query.get("date") || "";
   const initialDate = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : "";
   const [errors, setErrors] = useState<Record<string, string | undefined>>({});
+  const [prepared, setPrepared] = useState<{ id: string; values: Record<string, string | string[]> } | null>(null);
   const [brief, setBrief] = useState("");
   const [notice, setNotice] = useState("");
   const resultHeading = useRef<HTMLHeadingElement>(null);
@@ -45,6 +47,7 @@ export function InquiryForm({ talents }: { talents: TalentOption[] }) {
       "Date: " + (v.date || "To be decided"), v.place && "Location: " + v.place,
       v.details && "Project notes: " + v.details,
     ];
+    if (canSend) setPrepared({ id: crypto.randomUUID(), values: result.values });
     setBrief(lines.filter((line, i) => line || i === 1).join("\n"));
     setNotice("");
     requestAnimationFrame(() => resultHeading.current?.focus());
@@ -64,6 +67,7 @@ export function InquiryForm({ talents }: { talents: TalentOption[] }) {
         <h2 ref={resultHeading} tabIndex={-1} className="font-display text-3xl">Your brief is ready</h2>
         <p className="mt-2 text-muted">Download or copy this draft and share it with your talent. Your date still needs confirmation.</p>
         <pre className="my-5 whitespace-pre-wrap wrap-anywhere rounded-lg bg-surface p-4 font-sans text-sm">{brief}</pre>
+        {canSend && prepared && <SendBrief id={prepared.id} values={prepared.values} key={prepared.id} />}
         <div className="brief-actions flex flex-wrap items-center gap-4">
           <button type="button" className="btn" onClick={download}>Download brief</button>
           <button type="button" className="text-link" onClick={async () => {
@@ -82,14 +86,14 @@ export function InquiryForm({ talents }: { talents: TalentOption[] }) {
             <li key={key}><a className="underline" href={"#" + (key === "contact" ? "email" : key)}>{msg}</a></li>)}</ul>
         </div>}
         <div><label htmlFor="name" className={label}>Your name</label>
-          <input id="name" name="name" autoComplete="name" required className={field} {...accessibility("name")} />{error("name")}</div>
+          <input id="name" name="name" maxLength={150} autoComplete="name" required className={field} {...accessibility("name")} />{error("name")}</div>
         <fieldset>
           <legend className={label}>Contact details</legend>
           <p id="contact-help" className="mb-2 text-sm text-muted">Include at least one way for the talent to reach you.</p>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm" htmlFor="email">Email<input id="email" name="email" type="email" autoComplete="email" className={field}
+            <label className="text-sm" htmlFor="email">Email<input id="email" name="email" maxLength={320} type="email" autoComplete="email" className={field}
               aria-invalid={!!(errors.email || errors.contact)} aria-describedby={errors.email ? "email-err" : errors.contact ? "contact-err" : "contact-help"} /></label>
-            <label className="text-sm" htmlFor="phone">Phone or Messenger<input id="phone" name="phone" className={field} {...accessibility("contact")} /></label>
+            <label className="text-sm" htmlFor="phone">Phone or Messenger<input id="phone" name="phone" maxLength={150} className={field} {...accessibility("contact")} /></label>
           </div>{error("email")}{error("contact")}
         </fieldset>
         <fieldset id="services" tabIndex={-1} aria-describedby={errors.services ? "services-err" : "services-help"}>
@@ -105,7 +109,7 @@ export function InquiryForm({ talents }: { talents: TalentOption[] }) {
           <div><label htmlFor="date" className={label}>Date <small className="font-normal text-muted">(optional)</small></label>
             <input id="date" name="date" type="date" defaultValue={initialDate} onFocus={e => { e.currentTarget.min = localDateKey(new Date()); }} className={field} {...accessibility("date")} />{error("date")}</div>
         </div>
-        <label htmlFor="place" className={label}>Town or venue <small className="font-normal text-muted">(optional)</small><input id="place" name="place" className={field} /></label>
+        <label htmlFor="place" className={label}>Town or venue <small className="font-normal text-muted">(optional)</small><input id="place" name="place" maxLength={250} className={field} /></label>
         <div><label htmlFor="details" className={label}>Project notes <small className="font-normal text-muted">(optional)</small></label>
           <textarea id="details" name="details" rows={4} maxLength={2000} className={field} {...accessibility("details")} />{error("details")}</div>
         <button type="submit" className="btn">Prepare brief <span aria-hidden="true">→</span></button>

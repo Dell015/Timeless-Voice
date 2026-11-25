@@ -5,7 +5,8 @@ import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { href: "/#voices", label: "The talent" },
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services & rates" },
+  { href: "/booking-guide", label: "Booking guide" },
   { href: "/#work", label: "Sample scripts" },
 ];
 
